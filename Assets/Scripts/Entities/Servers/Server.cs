@@ -5,8 +5,12 @@ public class Server : MonoBehaviour
     [Header ("Processor")]
     [Tooltip ("MHz")]
     public float processorFrequency;
-    [Tooltip ("KB")]
+    public int processorCores;
+    [Tooltip("KB")]
     public float processorCache;
+    [Space(10)]
+    [Tooltip("MHz")]
+    public float processorInUse;
     [Tooltip ("C°")]
     public float processorTemperature;
 
@@ -15,16 +19,41 @@ public class Server : MonoBehaviour
     public int memoryCapacity;
     [Tooltip("MHz")]
     public float memoryFrequency;
+    [Space(10)]
+    [Tooltip("MB")]
+    public float memoryInUse;
 
     [Header ("Storage")]
     [Tooltip ("GB")]
-    public int storageCapacity;
+    public float storageCapacity;
     public StorageType storageType;
+    [Space(10)]
+    [Tooltip("GB")]
+    public float storageInUse;
 
-    public void UpgradeProcessor(float processorFrequency, float processorCache)
+    [Header("Services")]
+    public Software[] services;
+
+
+    void Update()
+    {
+        float processorUse = 0, memoryUse = 0;
+
+        foreach (Software service in services)
+        {
+            processorUse += service.cpuUsage;
+            memoryUse += service.memoryUsage;
+        }
+
+        processorInUse = processorUse;
+        memoryInUse = memoryUse;
+    }
+
+    public void UpgradeProcessor(float processorFrequency, float processorCache, int processorCores)
     {
         this.processorFrequency = processorFrequency;
         this.processorCache = processorCache;
+        this.processorCores = processorCores;
     }
 
     public void UpgradeMemory(int memoryCapacity, float memoryFrequency)
