@@ -11,6 +11,7 @@ public class Server : MonoBehaviour
     [Space(10)]
     [Tooltip("MHz")]
     public float processorInUse;
+    public float processorPercentage;
     [Tooltip ("C°")]
     public float processorTemperature;
 
@@ -22,6 +23,7 @@ public class Server : MonoBehaviour
     [Space(10)]
     [Tooltip("MB")]
     public float memoryInUse;
+    public float memoryPercentage;
 
     [Header ("Storage")]
     [Tooltip ("GB")]
@@ -30,6 +32,7 @@ public class Server : MonoBehaviour
     [Space(10)]
     [Tooltip("GB")]
     public float storageInUse;
+    public float storagePercentage;
 
     [Header("Services")]
     public Software[] services;
@@ -37,16 +40,22 @@ public class Server : MonoBehaviour
 
     void Update()
     {
-        float processorUse = 0, memoryUse = 0;
+        float processorUse = 0, memoryUse = 0, storageUse = 0;
 
         foreach (Software service in services)
         {
             processorUse += service.cpuUsage;
             memoryUse += service.memoryUsage;
+            storageUse += service.storageUsage;
         }
 
         processorInUse = processorUse;
         memoryInUse = memoryUse;
+        storageInUse = storageUse;
+
+        processorPercentage = processorInUse * 100 / processorFrequency;
+        memoryPercentage = memoryInUse * 100 / memoryCapacity;
+        storagePercentage = storageInUse * 100 / storageCapacity;
     }
 
     public void UpgradeProcessor(float processorFrequency, float processorCache, int processorCores)
