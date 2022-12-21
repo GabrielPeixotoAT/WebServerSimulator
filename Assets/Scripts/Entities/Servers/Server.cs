@@ -36,22 +36,29 @@ public class Server : MonoBehaviour
 
     [Header("Services")]
     public Software[] services;
+    public int TotalUsers;
+
+    [Header("OS Installed")]
+    public OperatingSystem operatingSystem;
 
 
     void Update()
     {
-        float processorUse = 0, memoryUse = 0, storageUse = 0;
+        float processorUse = 0, memoryUse = 0, storageUse = 0, totalUsers = 0;
 
         foreach (Software service in services)
         {
             processorUse += service.cpuUsage;
             memoryUse += service.memoryUsage;
             storageUse += service.storageUsage;
+            WebApp webApp = service as WebApp;
+            totalUsers += webApp.Users;
         }
 
-        processorInUse = processorUse;
-        memoryInUse = memoryUse;
-        storageInUse = storageUse;
+        processorInUse = processorUse + operatingSystem.cpuUsage;
+        memoryInUse = memoryUse + operatingSystem.memoryUsage;
+        storageInUse = storageUse + operatingSystem.storageUsage;
+        TotalUsers = (int) totalUsers;
 
         processorPercentage = processorInUse * 100 / processorFrequency;
         memoryPercentage = memoryInUse * 100 / memoryCapacity;

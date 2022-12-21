@@ -347,9 +347,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 954b7b66e7c2fb64ea080e28a64700d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cpuUsage: 154
-  memoryUsage: 286
+  cpuUsage: 0.3
+  memoryUsage: 1
   storageUsage: 0.4
+  cpuDefault: 0
+  memoryDefault: 0
+  stogrageDefault: 0
+  timer: 0
+  storageProgressiveUse: 0
+  Users: 1
 --- !u!1 &243903781
 GameObject:
   m_ObjectHideFlags: 0
@@ -1768,9 +1774,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 954b7b66e7c2fb64ea080e28a64700d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cpuUsage: 103
-  memoryUsage: 316
+  cpuUsage: 0.1
+  memoryUsage: 1
   storageUsage: 0.5
+  cpuDefault: 0
+  memoryDefault: 0
+  stogrageDefault: 0
+  timer: 0
+  storageProgressiveUse: 0
+  Users: 1
 --- !u!1 &846656161
 GameObject:
   m_ObjectHideFlags: 0
@@ -1815,9 +1827,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 954b7b66e7c2fb64ea080e28a64700d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cpuUsage: 112
-  memoryUsage: 240
+  cpuUsage: 0.3
+  memoryUsage: 2
   storageUsage: 0.3
+  cpuDefault: 0
+  memoryDefault: 0
+  stogrageDefault: 0
+  timer: 0
+  storageProgressiveUse: 0
+  Users: 1
 --- !u!1 &921630786
 GameObject:
   m_ObjectHideFlags: 0
@@ -2348,6 +2366,7 @@ Transform:
   m_LocalScale: {x: 0.22811005, y: 0.22811005, z: 0.22811005}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1612176013}
   - {fileID: 1658878242}
   m_Father: {fileID: 543450653015273277}
   m_RootOrder: 22
@@ -2440,6 +2459,8 @@ MonoBehaviour:
   - {fileID: 1729092629}
   - {fileID: 1912492824}
   - {fileID: 205159482}
+  TotalUsers: 0
+  operatingSystem: {fileID: 1612176014}
 --- !u!1 &1322238834
 GameObject:
   m_ObjectHideFlags: 0
@@ -2898,6 +2919,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1430863919}
   m_CullTransparentMesh: 1
+--- !u!1 &1612176012
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1612176013}
+  - component: {fileID: 1612176014}
+  m_Layer: 0
+  m_Name: SO
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1612176013
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1612176012}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1287763416}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1612176014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1612176012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c2b59e0d2d75704aade00187d26ed03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  osName: Fedora 37 Server
+  cpuUsage: 150
+  memoryUsage: 300
+  storageUsage: 5
 --- !u!1 &1624203265
 GameObject:
   m_ObjectHideFlags: 0
@@ -3000,7 +3069,7 @@ Transform:
   - {fileID: 1912492823}
   - {fileID: 205159481}
   m_Father: {fileID: 1287763416}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1686252903
 GameObject:
@@ -3122,9 +3191,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 954b7b66e7c2fb64ea080e28a64700d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cpuUsage: 154
-  memoryUsage: 286
+  cpuUsage: 0.2
+  memoryUsage: 1
   storageUsage: 0.4
+  cpuDefault: 0
+  memoryDefault: 0
+  stogrageDefault: 0
+  timer: 0
+  storageProgressiveUse: 0
+  Users: 1
 --- !u!1 &1759540156
 GameObject:
   m_ObjectHideFlags: 0
@@ -3341,9 +3416,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 954b7b66e7c2fb64ea080e28a64700d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cpuUsage: 154
-  memoryUsage: 286
+  cpuUsage: 0.5
+  memoryUsage: 2
   storageUsage: 0.4
+  cpuDefault: 0
+  memoryDefault: 0
+  stogrageDefault: 0
+  timer: 0
+  storageProgressiveUse: 0
+  Users: 1
 --- !u!1 &1950993115
 GameObject:
   m_ObjectHideFlags: 0
