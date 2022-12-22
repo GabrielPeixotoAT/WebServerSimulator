@@ -60,7 +60,7 @@ public class Server : MonoBehaviour
         storageInUse = storageUse + operatingSystem.storageUsage;
         TotalUsers = (int) totalUsers;
 
-        processorPercentage = processorInUse * 100 / processorFrequency;
+        processorPercentage = processorInUse * 100 / (processorFrequency * processorCores);
         memoryPercentage = memoryInUse * 100 / memoryCapacity;
         storagePercentage = storageInUse * 100 / storageCapacity;
     }
