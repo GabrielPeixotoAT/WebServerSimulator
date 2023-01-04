@@ -1,4 +1,7 @@
 using UnityEngine;
+using Assets.Scripts.Software;
+using Assets.Scripts.Software.IaaS;
+using Assets.Scripts.Software.PaaS;
 
 public class Server : MonoBehaviour
 {
